@@ -4,9 +4,12 @@
   <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
   <script src="./components/random-color.js"></script>
   <script src="./components/snap-to-grid.js"></script>
-  <script src="./components/intersection-spawn.js"></script>
+  <!-- <script src="./components/intersection-spawn.js"></script> -->
+  <script src="./components/changePic.js"></script>
   <!-- <script src="./components/waypoint.js"></script> -->
   <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
+  <script
+    src="https://unpkg.com/aframe-gaze-control-component@1.0.0/dist/aframe-gaze-control-component.min.js"></script>
 </head>
 
 <body>
@@ -15,58 +18,51 @@
       <!-- IMAGES MIXIN -->
       <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
       <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
-      <img id="cardPic" src="https://images.unsplash.com/photo-1574255821067-33926fe1dd66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=334&q=80">
+      <img id="cardPic" src="https://picsum.photos/600/400">
 
       <!-- VOXEL MIXIN -->
       <a-mixin id="voxel" geometry="primitive: box; height: 0.5; width: 0.5; depth: 0.5" material="shader: standard"
         random-color animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
         snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"></a-mixin>
 
-        <!-- CARD MIXIN -->
+      <!-- CARD MIXIN -->
       <a-mixin id="polaroid-base" geometry="primitive: plane; width: 1.8; height: 2" material="color: #77c99e">
       </a-mixin>
-      <a-mixin id="polaroid-pic" geometry="primitive: plane; width:1.6; height:1" src="#cardPic" position="0 0.2 0.1">
+      <a-mixin id="polaroid-pic" geometry="primitive: plane; width:1.6; height:1" src="#cardPic"
+        position="-.06 0.2 0.1">
       </a-mixin>
-      <a-mixin id="polaroid-head" text="value: This is a card; color: #00A" random-color  position="0.15 0.9 0" scale="2 2 2">
+      <a-mixin id="polaroid-head" text="value: This is a card; color: #00A" random-color position="0.15 0.9 0"
+        scale="2 2 2">
       </a-mixin>
+
+      <a-mixin id="button" color="tomato" geometry="primitive: plane; depth:.2; height:.2; width:.2">
+        </a->
+
+        <!-- <a-mixin id="comp">
+          <a-image src="#cardPic"></a-image>
+      </a-mixin> -->
 
     </a-assets>
 
     <!-- SCENE CONTENT -->
     <!-- <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
-    <a-cylinder id="ground" src="#groundTexture" radius="32" height="0.1"></a-cylinder>
-    <a-entity mixin="voxel" position="1 1 -2"></a-entity>
+    <a-cylinder id="ground" src="#groundTexture" radius="32" height="0.1"></a-cylinder> -->
+    <!--<a-entity mixin="voxel" position="1 1 -2"></a-entity>
     <a-entity id="log" text="value: Hello World" scale="3 3 3" position="1 0 -1"></a-entity>-->
     <!-- <a-plane  width="1.6" height="1" src="#cardPic" position="1 2 -2"></a-plane> -->
     <a-entity mixin="polaroid-base" position="1 0.5 -4">
       <a-image mixin="polaroid-pic" src="#cardPic"></a-image>
+      <a-entity mixin="comp"></a-entity>
       <a-entity mixin="polaroid-head"></a-entity>
+      <a-entity mixin="button" change-pic="https://picsum.photos/600/400" position="-0.6 -.4 .4"></a-entity>
     </a-entity>
 
-    <!-- HANDS -->
-    <!-- <a-entity id="teleHand" hand-controls="left" teleport-controls="type: parabolic; collisionEntities: [mixin='voxel'], #ground" oculus-go-controls ></a-entity> -->
-    <!-- <a-entity id="blockHand" hand-controls="right" laser-controls intersection-spawn="event: click; mixin: voxel"></a-entity> -->
-
-    <!-- AWSD -->
-    <!-- <a-entity camera look-controls wasd-controls="acceleration:2000;"></a-entity> -->
+    <a-light type="ambient" color="#CCC"></a-light>
 
     <!-- CAMERA -->
-    <!-- <a-camera id="camera">
-        <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
-    </a-camera> -->
-
-    <!-- OCULUS GO -->
-    <a-entity id="cameraRig">
-      <!-- camera -->
-      <a-entity id="head" camera wasd-controls look-controls></a-entity>
-      <!-- hand controls -->
-      <!-- <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-      <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity> -->
-      <a-entity id="teleHand" hand-controls="right"
-        teleport-controls="type: parabolic; collisionEntities: [mixin='voxel'], #ground" button: trigger
-        oculus-go-controls></a-entity>
-      <!-- <a-entity id="teleHand" hand-controls="right" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;" oculus-go-controls></a-entity> -->
-    </a-entity>
+    <a-camera>
+      <a-cursor color="#4CC3D9" fuse="true" timeout="10"></a-cursor>
+    </a-camera>
   </a-scene>
 </body>
 
