@@ -5,11 +5,12 @@ AFRAME.registerComponent('change-pic', {
 
   init () {
 
-    const pic = document.querySelector('#polaroid-pic');
-
+    const pic = document.querySelector('#pola');
+    const newPic = document.createElement('a-image')
     this.el.addEventListener('click', () => {
       pic.setAttribute('src', this.data);
-      console.log('hoal, hoalalaal');
+      pic.remove();
+      console.log('hoal, hoalalaal', this.data, pic);
     });
   }
 });
