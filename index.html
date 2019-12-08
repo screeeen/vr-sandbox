@@ -50,13 +50,12 @@
     <!--<a-entity mixin="voxel" position="1 1 -2"></a-entity>
     <a-entity id="log" text="value: Hello World" scale="3 3 3" position="1 0 -1"></a-entity>-->
     <!-- <a-plane  width="1.6" height="1" src="#cardPic" position="1 2 -2"></a-plane> -->
-    <a-entity mixin="polaroid-base" position="1 0.5 -4">
-      <a-image id="pola" mixin="polaroid-pic" src="#cardPic"></a-image>
+    <a-entity mixin="polaroid-base" id="card" position="1 0.5 -4">
+      <a-image  id="pic" mixin="polaroid-pic" src="#cardPic"></a-image>
       <a-entity mixin="comp"></a-entity>
       <a-entity mixin="polaroid-head"></a-entity>
-      <a-entity mixin="button" change-pic="https://picsum.photos/600/400" position="-0.6 -.4 .4"></a-entity>
+      <a-entity mixin="button" id="buttonC" change-pic="https://picsum.photos/600/400" position="-0.6 -.4 .4"></a-entity>
     </a-entity>
-
     <a-light type="ambient" color="#CCC"></a-light>
 
     <!-- CAMERA -->

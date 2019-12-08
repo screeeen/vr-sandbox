@@ -1,19 +1,41 @@
 AFRAME.registerComponent('change-pic', {
   schema: {
     default: ''
+
   },
 
-  init () {
-
-    const pic = document.querySelector('#pola');
-    const newPic = document.createElement('a-image')
+  init() {
     this.el.addEventListener('click', () => {
-      pic.setAttribute('src', this.data);
+      const card = document.querySelector('#card');
+      const button = document.querySelector('#buttonC');
+      const pic = document.querySelector('#pic');
+      const newPic = document.createElement('a-image')
       pic.remove();
-      console.log('hoal, hoalalaal', this.data, pic);
-    });
+      newPic.id = "pic";
+      newPic.setAttribute('mixin', 'polaroid-pic');
+      const url = "url(https://picsum.photos/200/300/?random&rnd"+new Date().getTime()+")";
+      newPic.setAttribute('src', url);
+      card.append(newPic);
+    }),
+      document.addEventListener('keypress', function (e) {
+        var key = e.which || e.keyCode;
+        if (key === 13) {
+          const card = document.querySelector('#card');
+          const button = document.querySelector('#buttonC');
+          const pic = document.querySelector('#pic');
+          const newPic = document.createElement('a-image')
+          pic.remove();
+          newPic.id = "pic";
+          newPic.setAttribute('mixin', 'polaroid-pic');
+          const url = "url(https://picsum.photos/200/300/?random&rnd"+new Date().getTime()+")";
+          newPic.setAttribute('src', url);
+          card.append(newPic);
+        }
+      })
   }
 });
+
+
 
 
 // const data = this.data;
