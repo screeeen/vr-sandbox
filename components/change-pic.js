@@ -7,7 +7,7 @@ AFRAME.registerComponent('change-pic', {
   init() {
     this.el.addEventListener('click', () => {
       const card = document.querySelector('#card');
-      const button = document.querySelector('#buttonC');
+      const button = document.querySelector('#button-change');
       const pic = document.querySelector('#pic');
       const newPic = document.createElement('a-image')
       pic.remove();
@@ -16,22 +16,23 @@ AFRAME.registerComponent('change-pic', {
       const url = "url(https://picsum.photos/200/300/?random&rnd"+new Date().getTime()+")";
       newPic.setAttribute('src', url);
       card.append(newPic);
-    }),
-      document.addEventListener('keypress', function (e) {
-        var key = e.which || e.keyCode;
-        if (key === 13) {
-          const card = document.querySelector('#card');
-          const button = document.querySelector('#buttonC');
-          const pic = document.querySelector('#pic');
-          const newPic = document.createElement('a-image')
-          pic.remove();
-          newPic.id = "pic";
-          newPic.setAttribute('mixin', 'polaroid-pic');
-          const url = "url(https://picsum.photos/200/300/?random&rnd"+new Date().getTime()+")";
-          newPic.setAttribute('src', url);
-          card.append(newPic);
-        }
-      })
+    })
+    // ,
+      // document.addEventListener('keypress', function (e) {
+      //   var key = e.which || e.keyCode;
+      //   if (key === 13) {
+      //     const card = document.querySelector('#card');
+      //     const button = document.querySelector('#buttonC');
+      //     const pic = document.querySelector('#pic');
+      //     const newPic = document.createElement('a-image')
+      //     pic.remove();
+      //     newPic.id = "pic";
+      //     newPic.setAttribute('mixin', 'polaroid-pic');
+      //     const url = "url(https://picsum.photos/200/300/?random&rnd"+new Date().getTime()+")";
+      //     newPic.setAttribute('src', url);
+      //     card.append(newPic);
+      //   }
+      // })
   }
 });
 

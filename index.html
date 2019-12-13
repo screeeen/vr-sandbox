@@ -5,7 +5,8 @@
   <script src="./components/random-color.js"></script>
   <script src="./components/snap-to-grid.js"></script>
   <!-- <script src="./components/intersection-spawn.js"></script> -->
-  <script src="./components/changePic.js"></script>
+  <script src="./components/change-pic.js"></script>
+  <script src="./components/remove-pic.js"></script>
   <!-- <script src="./components/waypoint.js"></script> -->
   <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
   <script
@@ -13,7 +14,7 @@
 </head>
 
 <body>
-  <a-scene background="color: #40e0d0">
+  <a-scene background="color: #AAA">
     <a-assets>
       <!-- IMAGES MIXIN -->
       <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
@@ -26,22 +27,15 @@
         snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"></a-mixin>
 
       <!-- CARD MIXIN -->
-      <a-mixin id="polaroid-base" geometry="primitive: plane; width: 1.8; height: 2" material="color: #77c99e">
+      <a-mixin id="polaroid-base" geometry="primitive: plane; width: 1.8; height: 2.4" material="color: #77c99e">
       </a-mixin>
       <a-mixin id="polaroid-pic" geometry="primitive: plane; width:1.6; height:1" src="#cardPic"
         position="-.06 0.2 0.1">
       </a-mixin>
-      <a-mixin id="polaroid-head" text="value: This is a card; color: #00A" random-color position="0.15 0.9 0"
-        scale="2 2 2">
+      <a-mixin id="polaroid-head" text="value: This is a card; color: #FFF; align:center" position="0.15 0.9 0"
+        scale="3 3 3">
       </a-mixin>
-
-      <a-mixin id="button" color="tomato" geometry="primitive: plane; depth:.2; height:.2; width:.2">
-        </a->
-
-        <!-- <a-mixin id="comp">
-          <a-image src="#cardPic"></a-image>
-      </a-mixin> -->
-
+      <a-mixin id="button" geometry="primitive: plane; depth:.2; height:.2; width:.7 color:cyan"></a-mixin>
     </a-assets>
 
     <!-- SCENE CONTENT -->
@@ -50,19 +44,54 @@
     <!--<a-entity mixin="voxel" position="1 1 -2"></a-entity>
     <a-entity id="log" text="value: Hello World" scale="3 3 3" position="1 0 -1"></a-entity>-->
     <!-- <a-plane  width="1.6" height="1" src="#cardPic" position="1 2 -2"></a-plane> -->
-    <a-entity mixin="polaroid-base" id="card" position="1 0.5 -4">
-      <a-image  id="pic" mixin="polaroid-pic" src="#cardPic"></a-image>
+
+    <!-- <a-light type="ambient" castShadow="false" color="#CCC"></a-light> -->
+
+    <!-- <a-entity mixin="polaroid-base" id="card" position="0 1.643 -4" geometry="" material="height: 340" scale="">
+
       <a-entity mixin="comp"></a-entity>
-      <a-entity mixin="polaroid-head"></a-entity>
-      <a-entity mixin="button" id="buttonC" change-pic="https://picsum.photos/600/400" position="-0.6 -.4 .4"></a-entity>
-    </a-entity>
-    <a-light type="ambient" color="#CCC"></a-light>
+      <a-entity mixin="polaroid-head" text="color: #00ffee" position="-0.41324 0.9 0" shadow=""></a-entity>
+      <a-text text="value: This is a descriptive text for this card, you can perform several iteractions with it."
+        wrap-count="20" position="-0.73893 -0.45295 0.4" scale="0.2 0.2 0.2"></a-text>
+
+      <a-entity mixin="button" id="button-change" change-pic="https://picsum.photos/600/400"
+        position="-0.38056 -0.79879 0.4" geometry="">
+        <a-text text="value: Change picture; align: center" scale="0.4 0.4 0.4"></a-text>
+      </a-entity>
+      <a-entity mixin="button" id="button-remove" remove-pic="" position="0.39715 -0.79942 0.4" geometry="">
+        <a-text text="value: Remove Picture; align: center" scale="0.4 0.4 0.4"></a-text>
+      </a-entity>
+      <a-image id="pic" mixin="polaroid-pic" src="url(https://picsum.photos/200/300/?random&amp;rnd1576190804231)"
+        material="" geometry="" position="0.01436 0.28262 0.1"></a-image>
+    </a-entity> -->
+
+    <a-entity class="collidable" geometry="" position="0.17834 0.55297 -3.34147"></a-entity>
 
     <!-- CAMERA -->
     <a-camera>
-      <a-cursor color="#4CC3D9" fuse="true" timeout="10"></a-cursor>
+      <a-entity id="player" collider-check>
+        <a-cursor color="#4CC3D9" fuse="true" timeout="10"></a-cursor>
+        <a-entity raycaster="objects: .collidable" showLine="true" position="0 -0.9 0" rotation="90 0 0"></a-entity>
+      </a-entity>
     </a-camera>
+
+    <!-- <a-grid id="ground" width="50" height="50" static-body color="#444444"></a-grid> -->
+
   </a-scene>
+
+  <script>
+    AFRAME.registerComponent('collider-check', {
+      dependencies: ['raycaster'],
+
+      init: function () {
+        this.el.addEventListener('raycaster-intersection', function () {
+          console.log('Player hit something!');
+        });
+      }
+    });
+  </script>
+
+
 </body>
 
 </html>
