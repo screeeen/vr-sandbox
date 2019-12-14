@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <audio id="noise" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay preload loop="true"></audio>
+    </a-assets>
+
+    <a-entity
+    text="value: Hello! color: #BBB"
+    position="-0.9 0.2 -3"
+    scale="1.5 1.5 1.5"></a-entity>
+
+    <!-- <a-sound src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"
+    position="-3 1 -4" ></a-sound> -->
+
+    <a-box id="button" color="tomato" position="5 2 -5" rotation="0 45 45" scale="2 2 2"
+    sound="#noise; on: click"></a-box>
+
+    <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+    
+
+    <script>
+    // One-liner to resume playback when user interacted with the page.
+document.querySelector('#button').addEventListener('click', function() {
+  
+    const soundEl = document.querySelector('[sound]');
+    console.log('play sound thing',soundEl,document.querySelector('#button'));
+    soundEl.components.sound.playSound();  
+});
+</script>
+  </a-scene>
+</body>
+
+</html>
