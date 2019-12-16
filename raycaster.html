@@ -1,0 +1,24 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="./components/collider-check.js"></script>
+</head>
+
+<body>
+  <a-scene background="color: #AAA">
+    <a-entity class="collidable" geometry="primitive: box" position="1 0 -3"></a-entity>
+
+    <a-camera>
+      <a-entity id="player" collider-check>
+        <a-entity cursor="fuse: true;" scale=".1 .1 .1" material="color: black; shader: flat" position="0 0 -3"></a-entity>
+        <a-entity raycaster="objects: .collidable; showLine: true;" line="color: red opacity: 1"
+          position="0 -0.9 0" rotation="0 0 0"></a-entity>
+      </a-entity>
+    </a-camera>
+  </a-scene>
+
+</body>
+
+</html>
