@@ -12,8 +12,12 @@
         <a-mixin
          id="button" 
          geometry="primitive: plane; height:.2; width:1.4;"
-         material="color:#FFF"
-         ">
+         material="color:#CCC"
+         animation__mouseenter="property: scale; to: 1.3 1.3 1.3; dur: 10; startEvents: mouseenter"
+         animation__mouseenter__2="property: components.material.material.color; type: color; to: lightblue; startEvents: mouseenter; dur: 10"
+         animation__mouseleave="property: scale; to: 1 1 1; dur: 15; startEvents: mouseleave"
+         animation__mouseleave__2="property: components.material.material.color; type: color; to: #CCC; startEvents: mouseleave; dur: 10">
+         
         </a-mixin>
       </a-assets>
 
@@ -31,6 +35,10 @@
     <a-entity mixin="button" goto="https://screeeen.github.io/vr-sandbox/animation_on_hover.html"  position="-1 2 -3">
       <a-text value="feedback animations" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
     </a-entity>
+    
+    <a-entity mixin="button" goto="https://screeeen.github.io/vr-sandbox/animation_on_hover.html"  position="-1 2.5 -3">
+      <a-text value="room" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
+    </a-entity>
 
     <a-entity mixin="button" goto="https://screeeen.github.io/vr-sandbox/cursor.html"  position="1 1 -3">
       <a-text value="cursor" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
@@ -43,15 +51,21 @@
     <a-entity mixin="button" goto="https://screeeen.github.io/vr-sandbox/raycaster.html"  position="1 2 -3">
       <a-text value="raycast" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
     </a-entity>
-      
-
+    
+    <a-entity mixin="button" goto="https://screeeen.github.io/vr-sandbox/environment.html"  position="1 2.5 -3">
+      <a-text value="environments" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
+    </a-entity>
+    
+    <a-entity mixin="button" goto="https://screeeen.github.io/vr-sandbox/geometryText.html"  position="1 3 -3">
+      <a-text value="geometry text" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
+    </a-entity>
 
     <a-camera>
       <a-entity
-        animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.01 0.01 0.01; to: .1 .1 .1"
-        animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: .1 .1 .1; to: 0.01 0.01 0.01"
-        animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: .1 .1 .1"
-        cursor="fuse: true;" scale=".1 .1 .1" material="color: black; shader: flat" position="0 0 -3"
+        animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 15; from: 0.01 0.01 0.01; to: .05 .05 .05"
+        animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 50; from: .05 .05 .05; to: 0.01 0.01 0.01"
+        animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 12; to: .01 .01 .01"
+        cursor="fuse: true;" scale=".01 .01 .01" material="color: white; shader: flat" position="0 0 -1"
         geometry="primitive: ring"></a-entity>
     </a-camera>
   </a-scene>
