@@ -3,6 +3,8 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+        <script src="./components/backButton.js"></script>
+
       </head>
 <body>
     <a-scene>
@@ -10,6 +12,8 @@
           <img id="my-image" src="https://picsum.photos/id/1025/2400/1200" crossOrigin = "Anonymous";>
         </a-assets>
       
+        <a-entity id="backButton" back-button></a-entity>
+
         <!-- Using the asset management system. -->
         <a-curvedimage src="#my-image" height="3.0" radius="5.7" theta-length="72"
                        rotation="0 100 0" scale="0.8 0.8 0.8"></a-curvedimage>

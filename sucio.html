@@ -10,7 +10,9 @@
   <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
   <script
     src="https://unpkg.com/aframe-gaze-control-component@1.0.0/dist/aframe-gaze-control-component.min.js"></script>
-</head>
+    <script src="./components/backButton.js"></script>
+
+  </head>
 
 <body>
   <a-scene background="color: #40e0d0">
@@ -36,6 +38,8 @@
       </a-mixin>
       <a-mixin id="button" color="white" geometry="primitive: plane; depth:.2; height:.2; width:.7"></a-mixin>
     </a-assets>
+
+    <a-entity id="backButton" back-button></a-entity>
 
     <!-- SCENE CONTENT -->
     <!-- <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>

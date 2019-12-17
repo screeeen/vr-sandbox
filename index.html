@@ -3,7 +3,7 @@
 <head>
   <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
   <script src="./components/goto.js"></script>
-  <script src="./components/button.js"></script>
+
 </head>
 
 <body>
@@ -16,6 +16,8 @@
          ">
         </a-mixin>
       </a-assets>
+
+      <a-entity id="backButton" back-button></a-entity>
 
       <!-- <a-link href="index.html" position ="10 0 -3" title="My Homepage" image="#homeThumbnail"></a-link> -->
       <a-entity mixin="button" goto="https://screeeen.github.io/vr-sandbox/curvedImage.html"  position="-1 1 -3">
