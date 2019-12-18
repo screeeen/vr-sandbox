@@ -7,8 +7,7 @@ AFRAME.registerComponent('back-button', {
 
   init() {
     const html = `
-    
-    <a-entity mixin="button" geometry="primitive:  plane;  width:  1.8;  height:  0.3"  goto="https://screeeen.github.io/vr-sandbox/index.html"  position="0 .24 -4">
+    <a-entity mixin="button" geometry="primitive:  plane;  width:  1.8;  height:  0.3"  goto="https://screeeen.github.io/vr-sandbox/index.html"  position="0 .24 -4"
     animation__click="property: components.material.material.color; type: color; startEvents: click; dur: 1; to: #FFF"
     animation__mouseenter="property: scale; to: 1.3 1.3 1.3; dur: 150; startEvents: mouseenter"
     animation__mouseenter__color="property: components.material.material.color; type: color; to: lightblue; startEvents: mouseenter; dur: 150"
