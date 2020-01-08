@@ -1,11 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <title>My A-Frame Scene</title>
   <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
-  <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+  <script
+    src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+  <script src="./components/backButton.js"></script>
+  <script src="./components/goto.js"></script>
+
 </head>
 
 <body>
-  <a-scene>
+  <a-scene background="color: #40E0D0">
+    <a-cylinder id="ground" src="https://cdn.aframe.io/a-painter/images/floor.jpg" radius="32" height="0.1">
+    </a-cylinder>
+    <a-entity id="backButton" back-button></a-entity>
+
     <a-entity id="cameraRig">
       <!-- camera -->
       <a-entity id="head" camera wasd-controls look-controls></a-entity>
@@ -15,3 +26,5 @@
     </a-entity>
   </a-scene>
 </body>
+
+</html>
