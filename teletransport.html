@@ -18,13 +18,14 @@
 
     <a-entity id="backButton" back-button></a-entity>
     <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-    
+
     <a-entity id="camera">
       <a-camera id="head"></a-camera>
 
       <a-entity
        id="right-hand"
-       teleport-controls="cameraRig: #camera; teleportOrigin: #head;"> 
+       teleport-controls="cameraRig: #camera; teleportOrigin: #head;"
+       gearvr-controls> 
        </a-entity>
 </a-entity>
     <a-sky color="#33B"></a-sky>
