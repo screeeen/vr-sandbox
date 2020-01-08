@@ -3,7 +3,7 @@
 
 <head>
   <title>My A-Frame Scene</title>
-  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
 
   <script
     src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
@@ -14,7 +14,8 @@
 
 <body>
   <a-scene>
-    <a-cylinder id="ground" src="https://cdn.aframe.io/a-painter/images/floor.jpg" radius="32" height="0.1"></a-cylinder>
+    <a-cylinder id="ground" src="https://cdn.aframe.io/a-painter/images/floor.jpg" radius="32" height="0.1">
+    </a-cylinder>
 
     <a-entity id="backButton" back-button></a-entity>
 
@@ -28,16 +29,13 @@
           animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 12; to: .01 .01 .01"
           animation__mouseleave__color="property: components.material.material.color; type: color; startEvents: mouseleave; dur: 12; to: #FFF"
           cursor="fuse: true;" scale=".01 .01 .01" material="color: white; shader: flat" position="0 0 -1"
-          geometry="primitive: sphere"></a-entity>
+          geometry="primitive: sphere">
+        </a-entity>
       </a-camera>
-
-      <a-entity id="teleHand" hand-controls="left"></a-entity>
-<a-entity id="blockHand" hand-controls="right"></a-entity>
-
-      <!-- hand controls -->
-      <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-      <a-entity id="right-hand" teleport-controls="type: parabolic; #ground"></a-entity>
     </a-entity>
+
+    <!-- hand controls -->
+    <a-entity id="right-hand" teleport-controls="type: parabolic; #ground"></a-entity>
   </a-scene>
 </body>
 
