@@ -1,80 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Laser Controls</title>
-    <meta name="description" content="Laser Controls - A-Frame">
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-  </head>
-  <body>
-    <script>
-      // Create boxes.
-      AFRAME.registerComponent('boxes', {
-        init: function () {
-          var box;
-          var columns = 20;
-          var el = this.el;
-          var i;
-          var j;
-          var rows = 15;
-          if (el.sceneEl.isMobile) {
-            columns = 10;
-            rows = 5;
-          };
-          for (x = columns / -2; x < columns / 2; x++) {
-            for (y = 0.5; y < rows; y++) {
-              box = document.createElement('a-entity');
-              box.setAttribute('mixin', 'box');
-              box.setAttribute('position', {x: x * .6, y: y * .6, z: 1.5});
-              el.appendChild(box);
-            }
-          }
-        }
-      });
-      AFRAME.registerComponent('shadow-if-mobile', {
-        init: function () {
-          if (!this.el.sceneEl.isMobile) {
-            this.el.setAttribute('light', {
-              castShadow: true,
-              shadowMapWidth: 2048,
-              shadowMapHeight: 1024
-            });
-          }
-        }
-      });
-    </script>
-    <a-scene background="color: #212" antialias="true">
-      <a-entity position="0 3.2 0" camera look-controls wasd-controls></a-entity>
-      <a-entity id="leftHand" laser-controls="hand: left" raycaster="objects: [mixin='box']"></a-entity>
-      <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: [mixin='box']" line="color: #118A7E"></a-entity>
 
-      <a-light position="0 0.5 1" intensity="0.75"></a-light>
+<head>
+  <meta charset="utf-8">
+  <title>Laser Controls</title>
+  <meta name="description" content="Laser Controls - A-Frame">
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+</head>
 
-      <a-entity position="0 0 -10">
-        <a-mixin id="box" geometry="primitive: box" material="color: #FAFAFA" rotation="0 0 -35" scale="0.5 0.5 0.5" intersect-color-change shadow="cast: true; receive: false"></a-mixin>
-        <a-entity boxes></a-entity>
+<body>
+  <a-scene background="color: #212" antialias="true">
+    <a-camera>
+      <a-entity
+        animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 0.01 0.01 0.01; to: .005 .005 .005"
+        animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 250; from: .01 .01 .01; to: 0.005 0.005 0.005"
+        animation__fusing__color="property: components.material.material.color; type: color; startEvents: fusing; dur: 250; to: yellow"
+        animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 12; to: .01 .01 .01"
+        animation__mouseleave__color="property: components.material.material.color; type: color; startEvents: mouseleave; dur: 12; to: #FFF"
+        cursor="fuse: true;" scale=".01 .01 .01" material="color: white; shader: flat" position="0 0 -1"
+        geometry="primitive: sphere"></a-entity>
+    </a-camera>
 
-        <a-circle rotation="-90 0 0" radius="20" color="#666" position="0 -0.1 0" shadow="receive: true" roughness="1"></a-circle>
+    <a-box color="tomato" position="5 6 -10" rotation="0 45 45" scale="2 2 2"
+      animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"
+      animation__mouseenter="property: scale; to: 3.3 3.3 3.3; dur: 100; startEvents: mouseenter"
+      animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave">
+    </a-box>
 
-        <a-light type="point" position="0 10 -30" intensity="0.85" shadow-if-mobile></a-light>
+    <a-icosahedron color="#FF926B" radius="2" position="-5 6 -10"
+      animation__rotation="property: object3D.rotation.y; to: 360; dir: alternate; dur: 1000; loop: true"
+      animation__mouseenter="property: scale; to: 3.3 3.3 3.3; dur: 100; startEvents: mouseenter"
+      animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave">
+    </a-icosahedron>
 
-        <a-torus radius="20" arc="190" rotation="0 90 0" animation="property: rotation; to: 0 450 0; loop: true; dur: 16000; easing: linear"></a-torus>
-        <a-torus radius="20" arc="190" rotation="0 45 0" animation="property: rotation; to: 0 405 0; loop: true; dur: 16000; easing: linear"></a-torus>
-        <a-torus radius="20" arc="190" rotation="0 135 0" animation="property: rotation; to: 0 495 0; dir: reverse; loop: true; dur: 16000; easing: linear"></a-torus>
-        <a-torus radius="20" arc="360" rotation="-90 0 0"></a-torus>
-      </a-entity>
-    </a-scene>
-  </body>
+    <!-- <a-dodecahedron color="#FF926B" radius="5"></a-dodecahedron> -->
+    <a-torus-knot color="#B84A39" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" position="-2 3 -2"></a-torus-knot>
+
+
+    <a-entity position="0 3.2 0" camera look-controls wasd-controls></a-entity>
+    <a-entity id="leftHand" laser-controls="hand: left" raycaster="objects: [mixin='box']"></a-entity>
+    <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: [mixin='box']" line="color: #118A7E">
+    </a-entity>
+
+    <a-entity position="0 0 -10">
+      <a-mixin id="box" geometry="primitive: box" material="color: #FAFAFA" rotation="0 0 -35" scale="0.5 0.5 0.5"
+        intersect-color-change shadow="cast: true; receive: false"></a-mixin>
+      <a-circle rotation="-90 0 0" radius="20" color="#666" position="0 -0.1 0" shadow="receive: true" roughness="1">
+      </a-circle>
+    </a-entity>
+  </a-scene>
+</body>
+
 </html>
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
