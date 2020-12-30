@@ -10,8 +10,8 @@
 
 <body>
   <a-scene background="color: #333" webxr="optionalFeatures: hand-tracking">
-    <a-entity light="type: directional; color: #FFF; intensity: 0.7" position="-1 1 0"></a-entity>
-    <a-entity light="type: hemisphere; color: #fff; groundColor: #ff; intensity: 0.5"></a-entity>
+    <!-- <a-entity light="type: directional; color: #FFF; intensity: 0.7" position="-1 1 0"></a-entity>
+    <a-entity light="type: hemisphere; color: #fff; groundColor: #ff; intensity: 0.5"></a-entity> -->
 
     <a-assets>
       <a-mixin id="button" geometry="primitive: plane; height:.2; width:1.4;" material="color:#CCC"
@@ -88,8 +88,10 @@
         <a-entity mixin="button" goto="/image_descriptor.html" position="0 2.5 -2">
           <a-text value="image-descriptor" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
         </a-entity>
-
       </a-entity>
+
+      <a-entity class="hand" hand-tracking-mesh="hand: left" hand-tracking-gestures-mesh></a-entity>
+      <a-entity class="hand" hand-tracking-mesh="hand: right" hand-tracking-gestures-mesh></a-entity>
 
         <a-camera>
           <a-entity
