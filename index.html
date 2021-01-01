@@ -20,10 +20,11 @@
     <!-- <a-scene environment="groundTexture: none; grid: 1x1; gridColor: #222; ground: flat; lighting: none; skyType: color; skyColor: #222; fog: 0.97; horizonColor: #222; groundColor: #333; groundColor2: #fff" webxr="optionalFeatures: hand-tracking"> -->
     
     <a-entity id="changeEnviroment" changeEnvironment  position="-1 3 -3></a-entity>
-    <a-entity environment="preset: osiris"></a-entity>
+    <!-- <a-entity environment="preset: osiris"></a-entity> -->
     
     <a-entity light="type: directional; color: #FFF; intensity: 0.7" position="-1 1 -1"></a-entity>
     <a-entity light="type: hemisphere; color: #fff; groundColor: #ff; intensity: 0.5"></a-entity>
+    <a-entity id="boxButton" button="label: box" scale="6 2 1" position="0 1.7 -0.5"/>
 
     <!-- <a-assets>
       <a-mixin id="button" geometry="primitive: plane; height:.2; width:1.4;" material="color:#CCC"
@@ -37,7 +38,6 @@
 
     <!-- basics -->
     
-    <a-entity id="boxButton" button="label: box" scale="6 2 1" position="0 0 -0.3"/>
 
     <!-- https://github.com/supermedium/aframe-environment-component -->
     <!-- <a-entity position="-3 0.5 -1.5" rotation="0 30 0">

@@ -42,6 +42,7 @@ AFRAME.registerComponent('event-manager', {
         const buttonEnviro = document.querySelector('changeEnviroment');
         buttonEnviro.setAttribute('environment',enviros[current]);
         console.log(scene)
+        buttonEnviro.innerHTML = button;
 //         this.sphereButtonEl.removeState('pressed');
 //         this.torusButtonEl.removeState('pressed');
 //         this.boxGeometryEl.object3D.visible = false;
