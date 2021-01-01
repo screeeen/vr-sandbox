@@ -5,14 +5,15 @@
   <script src="./components/goto.js"></script>
   <!-- <script src="./components/hand-tracking.js"></script>
   <script src="./components/hand-tracking-gestures.js"></script> -->
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   <script src="./components/hand-tracking-mesh.js"></script>
   <script src="./components/hand-tracking-gestures-mesh.js"></script>
 
 </head>
 
 <body>
-  <a-scene background="color: #333" webxr="optionalFeatures: hand-tracking">
-    <a-entity light="type: directional; color: #FFF; intensity: 0.7" position="-1 1 0"></a-entity>
+  <a-scene environment="groundTexture: none; grid: 1x1; gridColor: #222; ground: flat; lighting: none; skyType: color; skyColor: #222; fog: 0.97; horizonColor: #222; groundColor: #333; groundColor2: #fff" webxr="optionalFeatures: hand-tracking">
+    <a-entity light="type: directional; color: #FFF; intensity: 1.7" position="-1 1 0"></a-entity>
     <a-entity light="type: hemisphere; color: #fff; groundColor: #ff; intensity: 0.5"></a-entity>
 
     <a-assets>
