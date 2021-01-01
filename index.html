@@ -17,9 +17,7 @@
 
 <body>
   <a-scene  webxr="optionalFeatures: hand-tracking">
-    <!-- <a-scene environment="groundTexture: none; grid: 1x1; gridColor: #222; ground: flat; lighting: none; skyType: color; skyColor: #222; fog: 0.97; horizonColor: #222; groundColor: #333; groundColor2: #fff" webxr="optionalFeatures: hand-tracking"> -->
-    <a-entity id="changeEnviroment" changeEnvironment  position="-1 3 -3"></a-entity>   
-    <a-entity environment="preset: osiris"></a-entity>
+    <a-entity environment="preset: osiris" changeEnvironment  position="-1 3 -3"></a-entity>   
     
     <a-entity light="type: directional; color: #FFF; intensity: 0.7" position="-1 1 -1"></a-entity>
     <a-entity light="type: hemisphere; color: #fff; groundColor: #ff; intensity: 0.5"></a-entity>
