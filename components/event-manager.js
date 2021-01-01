@@ -1,6 +1,5 @@
 /* global AFRAME */
 AFRAME.registerComponent('event-manager', {
-    enviros: ['default', 'contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris'],
 
     init: function () {
       this.bindMethods();
@@ -30,7 +29,7 @@ AFRAME.registerComponent('event-manager', {
     bindMethods: function () {
       this.onClick = this.onClick.bind(this);
     },
-  
+    enviros: ['default', 'contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris'],
     onClick: function (evt) {
       var targetEl = evt.target;
       if (targetEl === this.boxButtonEl){
@@ -41,7 +40,6 @@ AFRAME.registerComponent('event-manager', {
         current++;
         const buttonEnviro = document.querySelector('changeEnviroment');
         buttonEnviro.setAttribute('environment',enviros[current]);
-        console.log(scene)
         buttonEnviro.innerHTML = button;
 //         this.sphereButtonEl.removeState('pressed');
 //         this.torusButtonEl.removeState('pressed');
