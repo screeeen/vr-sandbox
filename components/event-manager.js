@@ -13,8 +13,8 @@ AFRAME.registerComponent('event-manager', {
     },
     enviros: ['default', 'contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris'],
     current: 0,
-
     onClick: function (evt) {
+      console.log('event manager click')
       var targetEl = evt.target;
       if (targetEl === this.boxButtonEl){
         this.boxButtonEl.removeState('pressed');
@@ -24,11 +24,14 @@ AFRAME.registerComponent('event-manager', {
 
         var newEnviro = document.createElement('a-entity');
         var scene = document.querySelector('a-scene');
+        var texto = document.querySelector('#text')
+        texto.setAttribute('text',{value:'clicked'})
         newEnviro.setAttribute('environment',{preset :enviros[current]});
         newEnviro.id = 'environment';
         console.log(scene)
         scene.appendChild(newEnviro);   
       }
     }
+    
   });
   
