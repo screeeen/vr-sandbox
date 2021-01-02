@@ -20,10 +20,11 @@
     
     <a-entity light="type: directional; color: #FFF; intensity: 0.7" position="-1 1 -1"></a-entity>
     <a-entity light="type: hemisphere; color: #fff; groundColor: #ff; intensity: 0.5"></a-entity>
-
-    <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" event-manager>
-      <a-entity id="boxButton" change-enviroment button="label: box" scale="6 2 1" position="0 0 0"/></a-entity>
-    </a-entity>
+    <a-entity event-manager></a-entity>
+    <a-entity change-enviroment></a-entity>
+    <!-- <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" event-manager> -->
+      <a-entity id="boxButton"  button="label: box" scale="6 2 1" position="0 1.5 -1"/></a-entity>
+    <!-- </a-entity> -->
 
     <a-entity id="text" text="value: Hello World" position="0 1.5 -0.5"></a-entity>
 
