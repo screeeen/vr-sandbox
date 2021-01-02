@@ -10,11 +10,11 @@
   <title>Environment</title>
 </head>
 <body>
-<a-scene environment="preset: osiris" id="changeEnviroment">
+<a-scene environment="preset: osiris" >
   <!-- <a-entity id="backButton" back-button></a-entity> -->
   <a-entity id="changeEnviroment" changeEnvironment  scale="2 2 2" position="-1 2 -3"></a-entity>
-
-  <!-- https://github.com/supermedium/aframe-environment-component -->
+  <a-entity light="type: directional; color: #FFF; intensity: 0.7" position="-1 1 -1"></a-entity>
+  <a-entity light="type: hemisphere; color: #fff; groundColor: #ff; intensity: 0.5"></a-entity>
 
   <a-camera>
     <a-entity
