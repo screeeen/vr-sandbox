@@ -2,7 +2,6 @@
 AFRAME.registerComponent('back-button', {
   schema: {
     default: 'https://screeeen.github.io/vr-sandbox/index.html'
-
   },
 
   init() {
