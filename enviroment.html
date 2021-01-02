@@ -10,7 +10,7 @@
   <title>Environment</title>
 </head>
 <body>
-<a-scene>
+<a-scene webxr="optionalFeatures: hand-tracking">
   <a-entity id="backButton" back-button></a-entity>
   <a-entity id="environment" environment></a-entity>
   <a-entity id="changeEnviroment" change-enviroment scale="2 2 2" position="-1 0 -3"></a-entity>
@@ -28,6 +28,10 @@
       cursor="fuse: true;" scale=".01 .01 .01" material="color: white; shader: flat" position="0 0 -1"
       geometry="primitive: sphere"></a-entity>
   </a-camera>
+
+  <a-entity class="hand" hand-tracking-mesh="hand: left" hand-tracking-gestures-mesh></a-entity>
+  <a-entity class="hand" hand-tracking-mesh="hand: right" hand-tracking-gestures-mesh></a-entity>
+
 
 </a-scene>
 
