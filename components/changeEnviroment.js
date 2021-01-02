@@ -18,8 +18,7 @@ AFRAME.registerComponent('change-enviroment', {
       let current = 0;
 
       var buttonEnviro = document.querySelector('#changeEnviroment');
-      // buttonEnviro.setAttribute('environment',{preset :enviros[current]});
-      buttonEnviro.innerHTML = button;
+      buttonEnviro && (buttonEnviro.innerHTML = button);
       
       this.el.addEventListener('click', () => {
         current++;
@@ -33,14 +32,6 @@ AFRAME.registerComponent('change-enviroment', {
         console.log(scene)
         scene.appendChild(newEnviro);               // Append <button> to <body>
 
-        // buttonEnviro.setAttribute('environment',{preset :enviros[current]});
-        // buttonEnviro.innerHTML = button;
-        // window.location.href = this.data;
       })
-
     },
-    // onClick=()=>{
-    //     console.log('clicked envirobutton')
-
-    // }
   });
