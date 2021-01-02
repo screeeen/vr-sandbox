@@ -6,8 +6,6 @@
   <script src="./components/pressable.js"></script>
   <script src="./components/button.js"></script>
   <script src="./components/event-manager.js"></script>
-  <!-- <script src="./components/hand-tracking.js"></script>
-  <script src="./components/hand-tracking-gestures.js"></script> -->
   <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   <script src="./components/hand-tracking-mesh.js"></script>
   <script src="./components/hand-tracking-gestures-mesh.js"></script>
@@ -22,11 +20,9 @@
     <a-entity light="type: directional; color: #FFF; intensity: 0.7" position="-1 1 -1"></a-entity>
     <a-entity light="type: hemisphere; color: #fff; groundColor: #ff; intensity: 0.5"></a-entity>
 
-    <a-entity id="menu" event-manager>
-      <a-entity id="boxButton" button="label: box" scale="6 2 1" position="0 1 -0.5"/></a-entity>
+    <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" event-manager>
+      <a-entity id="boxButton" button="label: box" scale="6 2 1" position="0 0 0"/></a-entity>
     </a-entity>
-
-
 
     <a-entity class="hand" hand-tracking-mesh="hand: left" hand-tracking-gestures-mesh></a-entity>
     <a-entity class="hand" hand-tracking-mesh="hand: right" hand-tracking-gestures-mesh></a-entity>
