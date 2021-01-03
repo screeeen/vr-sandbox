@@ -12,8 +12,8 @@ AFRAME.registerComponent('event-manager', {
       this.onClick = this.onClick.bind(this);
     },
     enviros: ['default', 'contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris'],
-    current: 0,
     onClick: function (evt) {
+      var current =  Math.random()*10;
       console.log('event manager click')
       var targetEl = evt.target;
       if (targetEl === this.boxButtonEl){
