@@ -11,70 +11,20 @@
   <script src="./components/hand-tracking-mesh.js"></script>
   <script src="./components/hand-tracking-gestures-mesh.js"></script>
   <script src="./components/changeEnviroment.js"></script>
-
 </head>
 
 <body>
-  <!-- <a-scene  webxr="optionalFeatures: hand-tracking">
-    <a-entity id="environment" environment ></a-entity>   
-    <a-entity event-manager></a-entity>
-    <a-entity change-enviroment></a-entity>
-      <a-entity id="boxButton"  button="label: box" scale="6 2 1" position="0 1.5 -1"/></a-entity>
-        <!-- <a-camera>
-          <a-entity
-            animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 0.01 0.01 0.01; to: .005 .005 .005"
-            animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 250; from: .01 .01 .01; to: 0.005 0.005 0.005"
-            animation__fusing__color="property: components.material.material.color; type: color; startEvents: fusing; dur: 250; to: yellow"
-            animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 12; to: .01 .01 .01"
-            animation__mouseleave__color="property: components.material.material.color; type: color; startEvents: mouseleave; dur: 12; to: #FFF"
-            cursor="fuse: true;" scale=".01 .01 .01" material="color: white; shader: flat" position="0 0 -1"
-            geometry="primitive: sphere"></a-entity>
-        </a-camera> -->
-    <!-- <a-entity class="hand" hand-tracking-mesh="hand: left" hand-tracking-gestures-mesh></a-entity>
-    <a-entity class="hand" hand-tracking-mesh="hand: right" hand-tracking-gestures-mesh></a-entity>
-  </a-scene> --> -->
-
   <a-scene environment>
-    <!-- <a-entity
-      id="boxGeometry"
-      position="0 2.0 -1"
-      rotation="45 45 0"
-      geometry="primitive: box; height: 0.6; width: 0.6; depth: 0.6"
-      material="color: #ff4b5c"
-      size-change
-      scale="0.5 0.5 0.5"
-    ></a-entity>
-     <a-entity
-      id="torusGeometry"
-      position="0 2.0 -1"
-      rotation="45 45 0"
-      geometry="primitive: torus; radius: 0.4; radius-tubular: 0.06"
-      material="color: #d2e603"
-      size-change
-      visible="false"
-      scale="0.5 0.5 0.5"
-    ></a-entity>
-     <a-entity
-      id="sphereGeometry"
-      position="0 2.0 -1"
-      rotation="45 45 0"
-      geometry="primitive: sphere; radius: 0.6;"
-      material="color: #fcdab7"
-      size-change
-      visible="false"
-      scale="0.5 0.5 0.5"
-    ></a-entity> -->
-
-    <a-entity id="environment" environment></a-entity>   
-    <a-entity change-enviroment></a-entity>
+    <!-- <a-entity id="environment" environment></a-entity>    -->
+    <!-- <a-entity change-enviroment></a-entity> -->
     <a-entity id="text" text="value: Hello World" position="0 1.5 -0.5"></a-entity>
 
     <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" event-manager>
       <a-entity slider position="0 0.10 0"></a-entity>
-      <a-entity id="sphereButton" button="label: sphere" position="-0.15 0 0"></a-entity>
+      <!-- <a-entity id="sphereButton" button="label: sphere" position="-0.15 0 0"></a-entity> -->
       <a-entity id="boxButton" button="label: box" position="0 0 0"></a-entity>
-      <a-entity id="torusButton"button="label: torus" position="0.15 0 0"></a-entity>
-      <a-entity id="darkModeButton" button="label: Dark Mode; width: 0.20; toggable: true" position="0 -0.10 0"></a-entity>
+      <!-- <a-entity id="torusButton"button="label: torus" position="0.15 0 0"></a-entity>
+      <a-entity id="darkModeButton" button="label: Dark Mode; width: 0.20; toggable: true" position="0 -0.10 0"></a-entity> -->
     </a-entity>
     <a-entity hand-tracking-controls="hand: left"></a-entity>
     <a-entity hand-tracking-controls="hand: right"></a-entity>

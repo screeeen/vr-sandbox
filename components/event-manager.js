@@ -5,31 +5,42 @@ AFRAME.registerComponent('event-manager', {
       this.bindMethods();
       this.boxButtonEl = document.querySelector('#boxButton');  
       this.boxButtonEl.addEventListener('click', this.onClick);
+      document.addEventListener('keydown', this.onKeydown);
       this.boxButtonEl.addState('pressed');
     },
   
     bindMethods: function () {
       this.onClick = this.onClick.bind(this);
+      this.onKeydown = this.onKeydown.bind(this);
     },
-    enviros: ['default', 'contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris'],
     onClick: function (evt) {
-      var current =  Math.random()*10;
-      console.log('event manager click')
-      var targetEl = evt.target;
-      if (targetEl === this.boxButtonEl){
+      var enviros= ['default', 'contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris'];
+      var current =  parseInt(Math.random()*10);
+      if (this.boxButtonEl){
         this.boxButtonEl.removeState('pressed');
-        current++;
-        var enviro = document.querySelector('#environment');
-        enviro.remove();
-
-        var newEnviro = document.createElement('a-entity');
         var scene = document.querySelector('a-scene');
-        var texto = document.querySelector('#text')
-        texto.setAttribute('text',{value:'clicked'})
-        newEnviro.setAttribute('environment',{preset :enviros[current]});
-        newEnviro.id = 'environment';
-        console.log(scene)
-        scene.appendChild(newEnviro);   
+        var envi = enviros[current];
+        var enviro = scene.getAttribute('environment');
+        enviro.preset = envi;
+        console.log(scene.getAttribute('environment'));
+        // scene.removeAttribute('environment');
+        scene.setAttribute('environment',{preset :envi});
+        // console.log(scene.attributes)
+      }
+    },
+    onKeydown: function (evt) {
+      var enviros= ['default', 'contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris'];
+      var current =  parseInt(Math.random()*10);
+      if (this.boxButtonEl){
+        this.boxButtonEl.removeState('pressed');
+        var scene = document.querySelector('a-scene');
+        var envi = enviros[current];
+        var enviro = scene.getAttribute('environment');
+        enviro.preset = envi;
+        console.log(scene.getAttribute('environment'));
+        // scene.removeAttribute('environment');
+        scene.setAttribute('environment',{preset :envi});
+        // console.log(scene.attributes)
       }
     }
     
