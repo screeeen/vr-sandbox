@@ -11,20 +11,16 @@
   <script src="./components/hand-tracking-mesh.js"></script>
   <script src="./components/hand-tracking-gestures-mesh.js"></script>
   <script src="./components/changeEnviroment.js"></script>
+  <script src="./components/slidehandler1.js"></script>
 </head>
 
 <body>
   <a-scene environment>
-    <!-- <a-entity id="environment" environment></a-entity>    -->
-    <!-- <a-entity change-enviroment></a-entity> -->
-    <a-entity id="text" text="value: Hello World" position="0 1.5 -0.5"></a-entity>
 
+    <a-entity id="environment" environment></a-entity>   
+    <a-entity change-enviroment></a-entity>
     <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" event-manager>
-      <a-entity slider position="0 0.10 0"></a-entity>
-      <!-- <a-entity id="sphereButton" button="label: sphere" position="-0.15 0 0"></a-entity> -->
       <a-entity id="boxButton" button="label: box" position="0 0 0"></a-entity>
-      <!-- <a-entity id="torusButton"button="label: torus" position="0.15 0 0"></a-entity>
-      <a-entity id="darkModeButton" button="label: Dark Mode; width: 0.20; toggable: true" position="0 -0.10 0"></a-entity> -->
     </a-entity>
     <a-entity hand-tracking-controls="hand: left"></a-entity>
     <a-entity hand-tracking-controls="hand: right"></a-entity>
