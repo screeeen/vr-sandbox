@@ -10,9 +10,11 @@
 
     <a-assets>
       <a-asset-item id="pilot-man" src="./models/scene.gltf"></a-asset-item>
+      <a-asset-item id="land" src="./models/land.glb"></a-asset-item>
     </a-assets>
     <a-entity id="backButton" position="0 -2 -2" back-button></a-entity>
-    <a-entity gltf-model="#pilot-man" scale=".0001 .0001 .0001" position=" 0 -1 -2"></a-entity>
+    <a-entity gltf-model="#pilot-man" scale=".001 .001 .001" position=" 0 -1 -2"></a-entity>
+    <a-entity gltf-model="#land" scale=".001 .001 .001" position=" 0 -1 -2"></a-entity>
 
     <a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene>
