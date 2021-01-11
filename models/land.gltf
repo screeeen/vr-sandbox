@@ -1,0 +1,249 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "THREE.GLTFExporter"
+  },
+  "scenes": [
+    {
+      "nodes": [
+        2
+      ],
+      "name": "AuxScene"
+    }
+  ],
+  "scene": 0,
+  "nodes": [
+    {
+      "name": "Landscape_1",
+      "mesh": 0
+    },
+    {
+      "name": "Landscape",
+      "mesh": 1
+    },
+    {
+      "children": [
+        0,
+        1
+      ]
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 720000,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 720000,
+      "byteLength": 720000,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1440000,
+      "byteLength": 480000,
+      "target": 34962,
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1920000,
+      "byteLength": 120000,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2040000,
+      "byteLength": 720000,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2760000,
+      "byteLength": 720000,
+      "target": 34962,
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3480000,
+      "byteLength": 480000,
+      "target": 34962,
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3960000,
+      "byteLength": 120000,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "land_data.bin",
+      "byteLength": 4080000
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 60000,
+      "max": [
+        300.6323547363281,
+        27.51718521118164,
+        296.5419006347656
+      ],
+      "min": [
+        -299.3676452636719,
+        -45.62351989746094,
+        -303.4580993652344
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 60000,
+      "max": [
+        0.6504335999488831,
+        1,
+        0.6300473809242249
+      ],
+      "min": [
+        -0.6166483759880066,
+        0.6498464941978455,
+        -0.586786687374115
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 60000,
+      "max": [
+        1,
+        1
+      ],
+      "min": [
+        0,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 60000,
+      "max": [
+        59999
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 60000,
+      "max": [
+        300,
+        23.140705108642578,
+        300
+      ],
+      "min": [
+        -300,
+        -50,
+        -300
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 60000,
+      "max": [
+        0.6504335999488831,
+        1,
+        0.6300473213195801
+      ],
+      "min": [
+        -0.6166483759880066,
+        0.6498464941978455,
+        -0.5867867469787598
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 60000,
+      "max": [
+        1,
+        1
+      ],
+      "min": [
+        0,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5123,
+      "count": 60000,
+      "max": [
+        59999
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "mode": 4,
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 0
+        }
+      ]
+    }
+  ]
+}
