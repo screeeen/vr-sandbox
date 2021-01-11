@@ -19,6 +19,19 @@
 
     <a-entity id="environment" environment></a-entity>   
     <a-entity change-enviroment></a-entity>
+        <!-- basics -->
+    <a-entity position="-3 0.5 -1.5" rotation="0 30 0">
+      <a-text value="Basics" text="align:center" color="#FFF" scale="1 1 1" position="0 3.5 -2"></a-text>
+
+      <a-entity mixin=" button" goto="https://screeeen.github.io/vr-sandbox/geometryText.html" position="0 3 -2">
+        <a-text value="geometry text" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
+      </a-entity>
+
+      <a-entity mixin=" button" goto="https://screeeen.github.io/vr-sandbox/curvedImage.html" position="0 2.5 -2">
+        <a-text value="curved Image" text="align:center" color="#000" scale=".5 .5 .5""></a-text>
+      </a-entity>
+    </a-entity>
+
     <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" event-manager>
       <a-entity id="boxButton" button="label: box" position="0 0 0"></a-entity>
     </a-entity>
