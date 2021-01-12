@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Laser Controls</title>
   <meta name="description" content="Laser Controls - A-Frame">
-  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
   <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
   <script src="./components/backButton.js"></script>
   <script src="./components/goto.js"></script>
@@ -40,20 +40,20 @@
 
     <!-- <a-dodecahedron color="#FF926B" radius="5"></a-dodecahedron> -->
     <a-torus-knot color="#2222AA" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" position="-2 3 -2"></a-torus-knot>
-
+    <a-entity position="0 0 -10">
+      <a-circle rotation="-90 0 0" radius="20" color="#666" position="0 -0.1 0" shadow="receive: true" roughness="1">
+      </a-circle>
+    </a-entity>
 
     <a-entity id="cameraRig">
       <!-- camera -->
       <a-entity id="head" camera wasd-controls look-controls></a-entity>
       <!-- hand controls -->
-      <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-      <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;button: trigger"></a-entity>
+      <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;button: trigger"></a-entity>
     </a-entity>
 
-    <a-entity position="0 0 -10">
-      <a-circle rotation="-90 0 0" radius="20" color="#666" position="0 -0.1 0" shadow="receive: true" roughness="1">
-      </a-circle>
-    </a-entity>
+
   </a-scene>
 </body>
 
