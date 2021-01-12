@@ -29,5 +29,5 @@ AFRAME.registerComponent('event-manager', {
       console.log(scene)
       scene.appendChild(newEnviro);   
     }
-
-  
+  }
+});
