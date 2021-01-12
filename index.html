@@ -111,11 +111,11 @@
             animation__mouseleave__color="property: components.material.material.color; type: color; startEvents: mouseleave; dur: 12; to: #FFF"
             cursor="fuse: true;" raycaster="objects: .link" scale=".01 .01 .01" material="color: white; shader: flat" position="0 0 -1"
             geometry="primitive: sphere"></a-entity>
-            <a-entity id="leftHand" teleport-controls laser-controls="hand: left" raycaster="objects: .collidable"></a-entity>
-            <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: .collidable" line="color: #118A7E">
-           
+
         </a-camera>
 
+        <a-entity id="leftHand" teleport-controls laser-controls="hand: left" raycaster="objects: .link"></a-entity>
+        <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: .link" line="color: #118A7E">
 
         <a-entity class="hand" hand-tracking-mesh="hand: left" hand-tracking-gestures-mesh></a-entity>
         <a-entity class="hand" hand-tracking-mesh="hand: right" hand-tracking-gestures-mesh></a-entity>
