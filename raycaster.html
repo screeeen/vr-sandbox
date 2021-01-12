@@ -4,21 +4,24 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
   <script src="./components/collider-check.js"></script>
+  <script src="./components/raycaster-listen.js"></script>
   <script src="./components/backButton.js"></script>
   <script src="./components/goto.js"></script>
 
 </head>
 
 <body>
-  <a-scene background="color: #AAA">
+  <a-scene background="color: blue">
     <a-entity id="backButton" back-button></a-entity>
 
-    <a-entity class="collidable" geometry="primitive: box" position="1 0 -3"></a-entity>
+    <a-entity class="collidable" geometry="primitive: box" material="color:red" position="1 0 -6"></a-entity>
+    <a-entity class="collidable" geometry="primitive: box" material="color:aqua" position="3 0 -3"></a-entity>
+    <a-entity class="collidable" raycaster-listen material="color:gold" geometry="primitive: torus; radius: 10; radiusTubular: 0.5; arc: 360" position="1 10 -20"></a-entity>
 
     <a-camera>
       <a-entity id="player" collider-check>
-        <a-entity cursor="fuse: true;" scale=".1 .1 .1" material="color: black; shader: flat" position="0 0 -3"></a-entity>
-        <a-entity raycaster="objects: .collidable; showLine: true;" line="color: red opacity: 1"
+        <!-- <a-entity cursor="fuse: true;" scale=".1 .1 .1" material="color: black; shader: flat" position="0 0 -3"></a-entity> -->
+        <a-entity raycaster="objects: .collidable; showLine: true; far:100" line="color: white opacity: 1"
           position="0 -0.9 0" rotation="0 0 0"></a-entity>
       </a-entity>
     </a-camera>
