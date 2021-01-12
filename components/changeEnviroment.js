@@ -1,3 +1,4 @@
+
 AFRAME.registerComponent('change-enviroment', {
     schema: {
       default: '',
