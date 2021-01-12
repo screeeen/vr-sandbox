@@ -42,9 +42,12 @@
     <a-torus-knot color="#2222AA" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" position="-2 3 -2"></a-torus-knot>
 
 
-    <a-entity position="0 3.2 0" camera look-controls wasd-controls></a-entity>
-    <a-entity id="leftHand" teleport-controls laser-controls="hand: left" raycaster="objects: .collidable"></a-entity>
-    <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: .collidable" line="color: #118A7E">
+    <a-entity id="cameraRig">
+      <!-- camera -->
+      <a-entity id="head" camera wasd-controls look-controls></a-entity>
+      <!-- hand controls -->
+      <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
     </a-entity>
 
     <a-entity position="0 0 -10">
