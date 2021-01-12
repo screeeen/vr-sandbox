@@ -6,9 +6,7 @@
   <title>Laser Controls</title>
   <meta name="description" content="Laser Controls - A-Frame">
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-  <!-- <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script> -->
-  <script src="https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"
-
+  <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
   <script src="./components/backButton.js"></script>
   <script src="./components/goto.js"></script>
 </head>
@@ -51,15 +49,10 @@
       <!-- camera -->
       <a-entity id="head" camera wasd-controls look-controls></a-entity>
   </a-entity>
-  <a-entity id="right-hand"
-  brush
-  paint-controls="hand: right"
-  ui
-  teleport-controls>
-</a-entity>
+
       <!-- hand controls -->
-      <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; type:parabolic"></a-entity>
-      <!-- <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"></a-entity> -->
+      <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head type:parabolic"></a-entity>
+      <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"></a-entity>
   
   </a-scene>
 </body>
