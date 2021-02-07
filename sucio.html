@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="./components/random-color.js"></script>
   <script src="./components/snap-to-grid.js"></script>
   <!-- <script src="./components/intersection-spawn.js"></script> -->
@@ -9,37 +9,54 @@
   <!-- <script src="./components/waypoint.js"></script> -->
   <script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
   <script
-    src="https://unpkg.com/aframe-gaze-control-component@1.0.0/dist/aframe-gaze-control-component.min.js"></script>
-    <script src="./components/backButton.js"></script>
+          src="https://unpkg.com/aframe-gaze-control-component@1.0.0/dist/aframe-gaze-control-component.min.js"></script>
+  <script src="./components/backButton.js"></script>
 
-  </head>
+</head>
 
 <body>
   <a-scene background="color: #40e0d0">
     <a-assets>
       <!-- IMAGES MIXIN -->
-      <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
-      <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
-      <img id="cardPic" src="https://picsum.photos/600/400">
+      <img id="skyTexture"
+           src="https://cdn.aframe.io/a-painter/images/sky.jpg"
+           crossorigin="anonymous">
+      <img id="groundTexture"
+           src="https://cdn.aframe.io/a-painter/images/floor.jpg"
+           crossorigin="anonymous">
+      <img id="cardPic"
+           src="https://picsum.photos/600/400">
 
       <!-- VOXEL MIXIN -->
-      <a-mixin id="voxel" geometry="primitive: box; height: 0.5; width: 0.5; depth: 0.5" material="shader: standard"
-        random-color animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
-        snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"></a-mixin>
+      <a-mixin id="voxel"
+               geometry="primitive: box; height: 0.5; width: 0.5; depth: 0.5"
+               material="shader: standard"
+               random-color
+               animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+               snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"></a-mixin>
 
       <!-- CARD MIXIN -->
-      <a-mixin id="polaroid-base" geometry="primitive: plane; width: 1.8; height: 2" material="color: #77c99e">
+      <a-mixin id="polaroid-base"
+               geometry="primitive: plane; width: 1.8; height: 2"
+               material="color: #77c99e">
       </a-mixin>
-      <a-mixin id="polaroid-pic" geometry="primitive: plane; width:1.6; height:1" src="#cardPic"
-        position="-.06 0.2 0.1">
+      <a-mixin id="polaroid-pic"
+               geometry="primitive: plane; width:1.6; height:1"
+               src="#cardPic"
+               position="-.06 0.2 0.1">
       </a-mixin>
-      <a-mixin id="polaroid-head" text="value: This is a card; color: #00A; align:center" position="0.15 0.9 0"
-        scale="3 3 3">
+      <a-mixin id="polaroid-head"
+               text="value: This is a card; color: #00A; align:center"
+               position="0.15 0.9 0"
+               scale="3 3 3">
       </a-mixin>
-      <a-mixin id="button" color="white" geometry="primitive: plane; depth:.2; height:.2; width:.7"></a-mixin>
+      <a-mixin id="button"
+               color="white"
+               geometry="primitive: plane; depth:.2; height:.2; width:.7"></a-mixin>
     </a-assets>
 
-    <a-entity id="backButton" back-button></a-entity>
+    <a-entity id="backButton"
+              back-button></a-entity>
 
     <!-- SCENE CONTENT -->
     <!-- <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
@@ -47,23 +64,37 @@
     <!--<a-entity mixin="voxel" position="1 1 -2"></a-entity>
     <a-entity id="log" text="value: Hello World" scale="3 3 3" position="1 0 -1"></a-entity>-->
     <!-- <a-plane  width="1.6" height="1" src="#cardPic" position="1 2 -2"></a-plane> -->
-    
-    <a-entity mixin="polaroid-base" id="card" position="1 0.5 -4">
-      <a-image  id="pic" mixin="polaroid-pic" src="#cardPic"></a-image>
+
+    <a-entity mixin="polaroid-base"
+              id="card"
+              position="1 0.5 -4">
+      <a-image id="pic"
+               mixin="polaroid-pic"
+               src="#cardPic"></a-image>
       <a-entity mixin="comp"></a-entity>
       <a-entity mixin="polaroid-head"></a-entity>
-      <a-entity mixin="button" id="buttonC" change-pic="https://picsum.photos/600/400" position="-0.5 -.4 .4">
-        <a-text text="value: This is a button; align:center" scale=".4 .4 .4" ></a-text>
+      <a-entity mixin="button"
+                id="buttonC"
+                change-pic="https://picsum.photos/600/400"
+                position="-0.5 -.4 .4">
+        <a-text text="value: This is a button; align:center"
+                scale=".4 .4 .4"></a-text>
       </a-entity>
-      <a-entity mixin="button" id="buttonA"  position="0.3 -.4 .4">
-        <a-text text="value: This is a button; align:center" scale=".4 .4 .4" ></a-text>
+      <a-entity mixin="button"
+                id="buttonA"
+                position="0.3 -.4 .4">
+        <a-text text="value: This is a button; align:center"
+                scale=".4 .4 .4"></a-text>
       </a-entity>
     </a-entity>
-    <a-light type="ambient" color="#CCC"></a-light>
+    <a-light type="ambient"
+             color="#CCC"></a-light>
 
     <!-- CAMERA -->
     <a-camera>
-      <a-cursor color="#4CC3D9" fuse="true" timeout="10"></a-cursor>
+      <a-cursor color="#4CC3D9"
+                fuse="true"
+                timeout="10"></a-cursor>
     </a-camera>
   </a-scene>
 </body>
