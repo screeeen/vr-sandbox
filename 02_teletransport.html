@@ -4,53 +4,86 @@
 <head>
   <meta charset="utf-8">
   <title>Laser Controls</title>
-  <meta name="description" content="Laser Controls - A-Frame">
-  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-  <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+  <meta name="description"
+        content="Laser Controls - A-Frame">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script
+          src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
   <script src="./components/backButton.js"></script>
   <script src="./components/goto.js"></script>
 </head>
 
 <body>
-  <a-scene background="color: #212" antialias="true">
-    <a-entity class="collidable" id="backButton" back-button position="0 4 -1"></a-entity>
+  <a-scene background="color: #212"
+           antialias="true">
+    <a-entity class="collidable"
+              id="backButton"
+              back-button
+              position="0 4 -1"></a-entity>
 
     <a-camera>
-      <a-entity
-        animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 0.01 0.01 0.01; to: .005 .005 .005"
-        animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 250; from: .01 .01 .01; to: 0.005 0.005 0.005"
-        animation__fusing__color="property: components.material.material.color; type: color; startEvents: fusing; dur: 250; to: yellow"
-        animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 12; to: .01 .01 .01"
-        animation__mouseleave__color="property: components.material.material.color; type: color; startEvents: mouseleave; dur: 12; to: #FFF"
-        cursor="fuse: true;" scale=".01 .01 .01" material="color: white; shader: flat" position="0 0 -1"
-        geometry="primitive: sphere"></a-entity>
+      <a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 0.01 0.01 0.01; to: .005 .005 .005"
+                animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 250; from: .01 .01 .01; to: 0.005 0.005 0.005"
+                animation__fusing__color="property: components.material.material.color; type: color; startEvents: fusing; dur: 250; to: yellow"
+                animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 12; to: .01 .01 .01"
+                animation__mouseleave__color="property: components.material.material.color; type: color; startEvents: mouseleave; dur: 12; to: #FFF"
+                cursor="fuse: true;"
+                scale=".01 .01 .01"
+                material="color: white; shader: flat"
+                position="0 0 -1"
+                geometry="primitive: sphere"></a-entity>
     </a-camera>
 
-    <a-box class="collidable" color="tomato" position="5 6 -10" rotation="0 45 45" scale="2 2 2"
-      animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 5000; loop: true"
-      animation__mouseenter="property: scale; to: 3 3 3; dur: 100; startEvents: mouseenter"
-      animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave">
+    <a-box class="collidable"
+           color="tomato"
+           position="5 6 -10"
+           rotation="0 45 45"
+           scale="2 2 2"
+           animation__position="property: object3D.position.y; to: 2.2; dir: alternate; dur: 5000; loop: true"
+           animation__mouseenter="property: scale; to: 3 3 3; dur: 100; startEvents: mouseenter"
+           animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave">
     </a-box>
 
-    <a-icosahedron class="collidable" color="#FF926B" radius="2" position="-5 6 -10"
-      animation__rotation="property: object3D.rotation.y; to: 360 ; dur: 5000; loop: true"
-      animation__mouseenter="property: scale; to: 2 2 2; dur: 100; startEvents: mouseenter"
-      animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: mouseleave">
+    <a-icosahedron class="collidable"
+                   color="#FF926B"
+                   radius="2"
+                   position="-5 6 -10"
+                   animation__rotation="property: object3D.rotation.y; to: 360 ; dur: 5000; loop: true"
+                   animation__mouseenter="property: scale; to: 2 2 2; dur: 100; startEvents: mouseenter"
+                   animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: mouseleave">
     </a-icosahedron>
 
     <!-- <a-dodecahedron color="#FF926B" radius="5"></a-dodecahedron> -->
-    <a-torus-knot color="#2222AA" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" position="-2 3 -2"></a-torus-knot>
+    <a-torus-knot color="#2222AA"
+                  arc="180"
+                  p="2"
+                  q="7"
+                  radius="5"
+                  radius-tubular="0.1"
+                  position="-2 3 -2"></a-torus-knot>
     <a-entity position="0 0 -10">
-      <a-circle rotation="-90 0 0" radius="20" color="#666" position="0 -0.1 0" shadow="receive: true" roughness="1">
+      <a-circle rotation="-90 0 0"
+                radius="20"
+                color="#666"
+                position="0 -0.1 0"
+                shadow="receive: true"
+                roughness="1">
       </a-circle>
     </a-entity>
 
     <a-entity id="cameraRig">
       <!-- camera -->
-      <a-entity id="head" camera wasd-controls look-controls></a-entity>
+      <a-entity id="head"
+                camera
+                wasd-controls
+                look-controls></a-entity>
       <!-- hand controls -->
-      <a-entity id="left-hand"  raycaster="objects: collidable" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;button: trigger"></a-entity>
-      <a-entity id="right-hand" raycaster="objects: collidable"  teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;button: trigger"></a-entity>
+      <a-entity id="left-hand"
+                raycaster="objects: collidable"
+                teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;button: trigger"></a-entity>
+      <a-entity id="right-hand"
+                raycaster="objects: collidable"
+                teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;button: trigger"></a-entity>
     </a-entity>
 
 

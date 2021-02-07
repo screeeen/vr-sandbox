@@ -1,12 +1,13 @@
 <html>
 
 <head>
-  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="./components/goto.js"></script>
   <script src="./components/pressable.js"></script>
   <script src="./components/button.js"></script>
   <script src="./components/event-manager.js"></script>
-  <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+  <script
+          src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   <script src="./components/hand-tracking-mesh.js"></script>
   <script src="./components/hand-tracking-gestures-mesh.js"></script>
@@ -16,110 +17,212 @@
 
 <body>
   <!-- <a-scene webxr="optionalFeatures: hand-tracking"> -->
-    <a-scene environment="groundTexture: none; grid: 1x1; gridColor: #222; ground: flat; lighting: none; skyType: color; skyColor: #222; fog: 0.97; horizonColor: #222; groundColor: #333; groundColor2: #fff" webxr="optionalFeatures: hand-tracking">
-    
+  <a-scene environment="groundTexture: none; grid: 1x1; gridColor: #222; ground: flat; lighting: none; skyType: color; skyColor: #222; fog: 0.97; horizonColor: #222; groundColor: #333; groundColor2: #fff"
+           webxr="optionalFeatures: hand-tracking">
+
     <!-- <a-entity id="changeEnviroment" changeEnvironment  position="-1 3 -3"></a-entity>
     <a-entity environment="preset: osiris"></a-entity> -->
-    
-    <a-entity light="type: directional; color: #FFF; intensity: 0.7" position="-1 1 -1"></a-entity>
+
+    <a-entity light="type: directional; color: #FFF; intensity: 0.7"
+              position="-1 1 -1"></a-entity>
     <a-entity light="type: hemisphere; color: #fff; groundColor: #ff; intensity: 0.5"></a-entity>
     <!-- <a-entity id="boxButton" button="label: box" scale="6 2 1" position="0 1.7 -0.5"/> -->
 
     <a-assets>
-      <a-mixin id="button" geometry="primitive: plane; height:.2; width:1.4;" material="color:#CCC"
-        animation__click="property: components.material.material.color; type: color; startEvents: click; dur: 1; to: #FFF"
-        animation__mouseenter="property: scale; to: 1.3 1.3 1.3; dur: 150; startEvents: mouseenter"
-        animation__mouseenter__color="property: components.material.material.color; type: color; to: lightblue; startEvents: mouseenter; dur: 150"
-        animation__mouseleave="property: scale; to: 1 1 1; dur: 15; startEvents: mouseleave"
-        animation__mouseleave__color="property: components.material.material.color; type: color; to: #CCC; startEvents: mouseleave; dur: 15">
+      <a-mixin id="button"
+               geometry="primitive: plane; height:.2; width:1.4;"
+               material="color:#CCC"
+               animation__click="property: components.material.material.color; type: color; startEvents: click; dur: 1; to: #FFF"
+               animation__mouseenter="property: scale; to: 1.3 1.3 1.3; dur: 150; startEvents: mouseenter"
+               animation__mouseenter__color="property: components.material.material.color; type: color; to: lightblue; startEvents: mouseenter; dur: 150"
+               animation__mouseleave="property: scale; to: 1 1 1; dur: 15; startEvents: mouseleave"
+               animation__mouseleave__color="property: components.material.material.color; type: color; to: #CCC; startEvents: mouseleave; dur: 15">
       </a-mixin>
     </a-assets>
 
     <!-- 01 basics -->
-    <a-entity position="-3 0.5 -1.5" rotation="0 30 0">
-      <a-text value="Basics" text="align:center" color="#FFF" scale="1 1 1" position="0 3.5 -2"></a-text>
+    <a-entity position="-3 0.5 -1.5"
+              rotation="0 30 0">
+      <a-text value="Basics"
+              text="align:center"
+              color="#FFF"
+              scale="1 1 1"
+              position="0 3.5 -2"></a-text>
 
-      <a-entity class="link" mixin=" button" goto="https://screeeen.github.io/vr-sandbox/01_geometryText.html" position="0 3 -2">
-        <a-text value="geometry text" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
+      <a-entity class="link"
+                mixin=" button"
+                goto="https://screeeen.github.io/vr-sandbox/01_geometryText.html"
+                position="0 3 -2">
+        <a-text value="geometry text"
+                text="align:center"
+                color="#000"
+                scale=".5 .5 .5"></a-text>
       </a-entity>
 
-      <a-entity class="link" mixin=" button" goto="https://screeeen.github.io/vr-sandbox/01_curvedImage.html" position="0 2.5 -2">
-        <a-text value="curved Image" text="align:center" color="#000" scale=".5 .5 .5""></a-text>
+      <a-entity class="link"
+                mixin=" button"
+                goto="https://screeeen.github.io/vr-sandbox/01_curvedImage.html"
+                position="0 2.5 -2">
+        <a-text value="curved Image"
+                text="align:center"
+                color="#000"
+                scale=".5 .5 .5""></a-text>
       </a-entity>
 
-      <a-entity class="link" mixin=" button" goto="https://screeeen.github.io/vr-sandbox/01_cursor.html" position="0 2 -2">
-        <a-text value="cursor" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
+      <a-entity class="
+                link"
+                mixin=" button"
+                goto="https://screeeen.github.io/vr-sandbox/01_cursor.html"
+                position="0 2 -2">
+          <a-text value="cursor"
+                  text="align:center"
+                  color="#000"
+                  scale=".5 .5 .5"></a-text>
       </a-entity>
     </a-entity>
-  
+
     <!-- interaction -->
-    <a-text value=" Interaction" text="align:center" color="#FFF" scale="1 1 1" position="-1 3.5 -3"></a-text>
+    <a-text value=" Interaction"
+            text="align:center"
+            color="#FFF"
+            scale="1 1 1"
+            position="-1 3.5 -3"></a-text>
 
-          <a-entity class="link" mixin="button" goto="https://screeeen.github.io/vr-sandbox/02_raycaster.html" position="-1 3 -3">
-            <a-text value="raycast" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
-          </a-entity>
+    <a-entity class="link"
+              mixin="button"
+              goto="https://screeeen.github.io/vr-sandbox/02_raycaster.html"
+              position="-1 3 -3">
+      <a-text value="raycast"
+              text="align:center"
+              color="#000"
+              scale=".5 .5 .5"></a-text>
+    </a-entity>
 
-          <a-entity class="link" mixin=" button" goto="https://screeeen.github.io/vr-sandbox/02_card.html" position="-1 2.5 -3">
-            <a-text value="Card" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
-          </a-entity>
+    <a-entity class="link"
+              mixin=" button"
+              goto="https://screeeen.github.io/vr-sandbox/02_card.html"
+              position="-1 2.5 -3">
+      <a-text value="Card"
+              text="align:center"
+              color="#000"
+              scale=".5 .5 .5"></a-text>
+    </a-entity>
 
-          <!-- teletransport -->
-          <a-entity class="link" mixin="button" goto="https://screeeen.github.io/vr-sandbox/02_teletransport.html" position="-1 2 -3">
-            <a-text value="teleport" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
-          </a-entity> 
-          
+    <!-- teletransport -->
+    <a-entity class="link"
+              mixin="button"
+              goto="https://screeeen.github.io/vr-sandbox/02_teletransport.html"
+              position="-1 2 -3">
+      <a-text value="teleport"
+              text="align:center"
+              color="#000"
+              scale=".5 .5 .5"></a-text>
+    </a-entity>
+
     <!-- environments -->
-    <a-text value="Enviroments" text="align:center" color="#FFF" scale="1 1 1" position="1 3.5 -3"></a-text>
+    <a-text value="Enviroments"
+            text="align:center"
+            color="#FFF"
+            scale="1 1 1"
+            position="1 3.5 -3"></a-text>
 
-          <!-- animation on hover -->
-           <a-entity class="link" mixin="button" goto="https://screeeen.github.io/vr-sandbox/03_animation_on_hover.html" position="1 3 -3">
-            <a-text value="feedback animations" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
-          </a-entity>
+    <!-- animation on hover -->
+    <a-entity class="link"
+              mixin="button"
+              goto="https://screeeen.github.io/vr-sandbox/03_animation_on_hover.html"
+              position="1 3 -3">
+      <a-text value="feedback animations"
+              text="align:center"
+              color="#000"
+              scale=".5 .5 .5"></a-text>
+    </a-entity>
 
-          <!-- room -->
-          <a-entity class="link" mixin="button" goto="https://screeeen.github.io/vr-sandbox/03_room.html" position="1 2.5 -3">
-            <a-text value="room" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
-          </a-entity>
+    <!-- room -->
+    <a-entity class="link"
+              mixin="button"
+              goto="https://screeeen.github.io/vr-sandbox/03_room.html"
+              position="1 2.5 -3">
+      <a-text value="room"
+              text="align:center"
+              color="#000"
+              scale=".5 .5 .5"></a-text>
+    </a-entity>
 
-          <!-- environment -->
-          <a-entity class="link" mixin="button" goto="https://screeeen.github.io/vr-sandbox/03_enviroment.html" position="1 2 -3">
-            <a-text value="environments" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
-          </a-entity>
+    <!-- environment -->
+    <a-entity class="link"
+              mixin="button"
+              goto="https://screeeen.github.io/vr-sandbox/03_enviroment.html"
+              position="1 2 -3">
+      <a-text value="environments"
+              text="align:center"
+              color="#000"
+              scale=".5 .5 .5"></a-text>
+    </a-entity>
 
-      <!-- augmented -->
-      <a-entity position="3 0.5 -1.5" rotation="0 -30 0">
-        <a-text value="Augmented" text="align:center" color="#FFF" scale="1 1 1" position="0 3.5 -2"></a-text>
+    <!-- augmented -->
+    <a-entity position="3 0.5 -1.5"
+              rotation="0 -30 0">
+      <a-text value="Augmented"
+              text="align:center"
+              color="#FFF"
+              scale="1 1 1"
+              position="0 3.5 -2"></a-text>
 
-        <!-- ar -->
-         <a-entity class="link" mixin="button" goto="https://screeeen.github.io/vr-sandbox/04_ar.html" position="0 3 -2"> 
-          <a-text value="augmented model" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
-        </a-entity>
+      <!-- ar -->
+      <a-entity class="link"
+                mixin="button"
+                goto="https://screeeen.github.io/vr-sandbox/04_ar.html"
+                position="0 3 -2">
+        <a-text value="augmented model"
+                text="align:center"
+                color="#000"
+                scale=".5 .5 .5"></a-text>
+      </a-entity>
 
-        <!-- image descriptor -->
-        <a-entity class="link" mixin="button" goto="/image_descriptor.html" position="0 2.5 -2">
-          <a-text value="image-descriptor" text="align:center" color="#000" scale=".5 .5 .5"></a-text>
-        </a-entity>
-       </a-entity> 
+      <!-- image descriptor -->
+      <a-entity class="link"
+                mixin="button"
+                goto="/image_descriptor.html"
+                position="0 2.5 -2">
+        <a-text value="image-descriptor"
+                text="align:center"
+                color="#000"
+                scale=".5 .5 .5"></a-text>
+      </a-entity>
+    </a-entity>
 
 
-        <a-camera>
-          <a-entity
-            animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 0.01 0.01 0.01; to: .005 .005 .005"
-            animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 250; from: .01 .01 .01; to: 0.005 0.005 0.005"
-            animation__fusing__color="property: components.material.material.color; type: color; startEvents: fusing; dur: 250; to: yellow"
-            animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 12; to: .01 .01 .01"
-            animation__mouseleave__color="property: components.material.material.color; type: color; startEvents: mouseleave; dur: 12; to: #FFF"
-            cursor="fuse: true;" raycaster="objects: .link" scale=".01 .01 .01" material="color: white; shader: flat" position="0 0 -1"
-            geometry="primitive: sphere"></a-entity>
-            
-          </a-camera>
-          
+    <a-camera>
+      <a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 0.01 0.01 0.01; to: .005 .005 .005"
+                animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 250; from: .01 .01 .01; to: 0.005 0.005 0.005"
+                animation__fusing__color="property: components.material.material.color; type: color; startEvents: fusing; dur: 250; to: yellow"
+                animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 12; to: .01 .01 .01"
+                animation__mouseleave__color="property: components.material.material.color; type: color; startEvents: mouseleave; dur: 12; to: #FFF"
+                cursor="fuse: true;"
+                raycaster="objects: .link"
+                scale=".01 .01 .01"
+                material="color: white; shader: flat"
+                position="0 0 -1"
+                geometry="primitive: sphere"></a-entity>
 
-          <a-entity id="leftHand" teleport-controls laser-controls="hand: left" raycaster="objects: .link"></a-entity>
-          <a-entity id="rightHand" laser-controls="hand: right" raycaster="objects: .link" line="color: #118A7E">
-  
-        <a-entity class="hand" hand-tracking-mesh="hand: left" hand-tracking-gestures-mesh></a-entity>
-        <a-entity class="hand" hand-tracking-mesh="hand: right" hand-tracking-gestures-mesh></a-entity>
+    </a-camera>
+
+
+    <a-entity id="leftHand"
+              teleport-controls
+              laser-controls="hand: left"
+              raycaster="objects: .link"></a-entity>
+    <a-entity id="rightHand"
+              laser-controls="hand: right"
+              raycaster="objects: .link"
+              line="color: #118A7E">
+
+      <a-entity class="hand"
+                hand-tracking-mesh="hand: left"
+                hand-tracking-gestures-mesh></a-entity>
+      <a-entity class="hand"
+                hand-tracking-mesh="hand: right"
+                hand-tracking-gestures-mesh></a-entity>
 
   </a-scene>
   </script>
