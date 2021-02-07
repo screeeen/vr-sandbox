@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+
 <head>
-  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="./components/backButton.js"></script>
   <script src="./components/goto.js"></script>
 
@@ -9,23 +10,28 @@
 <body>
   <a-scene background="#AAA">
     <a-assets>
-      <img id="homeThumbnail" src="./images/hola.png">
+      <img id="homeThumbnail"
+           src="./images/hola.png">
     </a-assets>
-    <a-entity id="backButton" back-button></a-entity>
+    <a-entity id="backButton"
+              back-button></a-entity>
 
     <!-- <a-entity position ="10 4 -3" link="href: index.html; title: My Homepage; image: #homeThumbnail"></a-entity> -->
     <a-camera>
-      <a-entity
-        animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 0.01 0.01 0.01; to: .005 .005 .005"
-        animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 250; from: .01 .01 .01; to: 0.005 0.005 0.005"
-        animation__fusing__color="property: components.material.material.color; type: color; startEvents: fusing; dur: 250; to: yellow"
-        animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 12; to: .01 .01 .01"
-        animation__mouseleave__color="property: components.material.material.color; type: color; startEvents: mouseleave; dur: 12; to: #FFF"
-        cursor="fuse: true;" scale=".01 .01 .01" material="color: white; shader: flat" position="0 0 -1"
-        geometry="primitive: sphere"></a-entity>
+      <a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 50; from: 0.01 0.01 0.01; to: .005 .005 .005"
+                animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 250; from: .01 .01 .01; to: 0.005 0.005 0.005"
+                animation__fusing__color="property: components.material.material.color; type: color; startEvents: fusing; dur: 250; to: yellow"
+                animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 12; to: .01 .01 .01"
+                animation__mouseleave__color="property: components.material.material.color; type: color; startEvents: mouseleave; dur: 12; to: #FFF"
+                cursor="fuse: true;"
+                scale=".01 .01 .01"
+                material="color: white; shader: flat"
+                position="0 0 -1"
+                geometry="primitive: sphere"></a-entity>
     </a-camera>
- 
+
   </a-scene>
 
 </body>
+
 </html>

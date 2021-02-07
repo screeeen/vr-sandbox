@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="./components/goto.js"></script>
   <script src="./components/pressable.js"></script>
   <script src="./components/button.js"></script>
@@ -17,12 +17,19 @@
 <body>
   <a-scene environment>
 
-    <a-entity id="environment" environment></a-entity>   
+    <a-entity id="environment"
+              environment></a-entity>
     <a-entity change-enviroment></a-entity>
 
 
-    <a-entity id="menu" menu position="0 1.5 -0.5" rotation="-45 0 0" event-manager>
-      <a-entity id="boxButton" button="label: box" position="0 0 0"></a-entity>
+    <a-entity id="menu"
+              menu
+              position="0 1.5 -0.5"
+              rotation="-45 0 0"
+              event-manager>
+      <a-entity id="boxButton"
+                button="label: box"
+                position="0 0 0"></a-entity>
     </a-entity>
     <a-entity hand-tracking-controls="hand: left"></a-entity>
     <a-entity hand-tracking-controls="hand: right"></a-entity>
